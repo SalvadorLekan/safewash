@@ -1,16 +1,135 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Khula:wght@600&family=Open+Sans&display=swap");
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply font-cocon;
+}
 a {
-  color: inherit;
-  text-decoration: none;
+	@apply font-gilroy font-semibold;
+}
+body {
+	@apply font-open-sans;
+}
+#woman::after,
+#womanr::before,
+#baby::before {
+	position: absolute;
+	width: 90%;
+	content: "";
+	height: 90%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url("/assets/pinkblob.png");
 }
 
-* {
-  box-sizing: border-box;
+#womanr::after,
+#baby::after {
+	content: "";
+	position: absolute;
+	width: 90%;
+	height: 90%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url("/assets/greenblob.png");
+}
+#woman::after {
+	width: 60%;
+	height: 60%;
+	clip-path: polygon(100% 39%, 0% 0%, 0% 100%, 100% 100%);
+}
+
+#womanr::after,
+#womanr::before {
+	width: 100%;
+	height: 100%;
+}
+
+blockquote::before {
+	content: url("/assets/qoute.png");
+	position: absolute;
+	transform: translatex(-120%);
+}
+#vid {
+	background-image: url("/assets/vid.png");
+	background-position: center;
+	background-repeat: no-repeat;
+}
+#vid::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	max-width: 879px;
+	border: 4px solid #6eb245;
+	border-radius: 1rem;
+	transform: rotatez(-2.36deg) scale(0.96);
+}
+#vid::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	max-width: 879px;
+	border: 4px solid #fe96c6;
+	border-radius: 1rem;
+	transform: rotatez(2.36deg) scale(0.96);
+}
+
+#slide-2 {
+	background-image: url("/assets/malebaby.png"),
+		linear-gradient(
+			212.16deg,
+			rgba(254, 150, 198, 0.4) 10.33%,
+			rgba(254, 150, 198, 0.4) 31.35%,
+			rgba(255, 255, 255, 0) 83.91%
+		),
+		linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
+		linear-gradient(213.01deg, #ffffff 4.13%, rgba(254, 150, 198, 0.25) 80.31%);
+
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-size: contain;
+}
+#slide-3 {
+	background-image: url("/assets/slide-3.png"), linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
+		linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
+		linear-gradient(146.99deg, rgba(255, 255, 255, 0.5) 4.13%, rgba(254, 150, 198, 0.5) 80.31%);
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: cover;
+}
+#slide-4 {
+	background-image: url("/assets/smile-woman.png"), linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
+		linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
+		linear-gradient(213.01deg, #ffffff 4.13%, rgba(254, 150, 198, 0.5) 80.31%);
+	background-repeat: no-repeat;
+	background-position: top right;
+	background-size: contain;
+}
+@media (min-width: 768px) {
+	#slide-1 {
+		background-image: url("/assets/baby.png"), linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
+			linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
+			linear-gradient(213.01deg, #ffffff 4.13%, rgba(254, 150, 198, 0.5) 80.31%);
+		background-repeat: no-repeat;
+		background-position: top right;
+		background-size: contain;
+	}
+}
+html {
+	scroll-behavior: smooth;
+}
+
+#search-area {
+	min-height: 200vh;
+	background-image: url("/assets/basket.png");
+	background-position: top right;
+	background-repeat: no-repeat;
 }
